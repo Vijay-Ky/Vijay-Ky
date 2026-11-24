@@ -1,24 +1,24 @@
 <div align="center">
 
-  <!-- 1. HERO VIEWFINDER -->
+  <!-- 1. HERO VIEWFINDER (NEO-WHITE THEME) -->
   <a href="#-connect--collaborate">
-    <img src="./hero.svg?v=1" alt="Vijay Kumar // Hero Viewfinder" width="100%" />
+    <img src="./hero.svg?v=2" alt="Vijay Kumar // Hero Viewfinder" width="100%" />
   </a>
 
   <br/><br/>
 
   <!-- 2. WHAT I BUILD & HOBBIES CAROUSEL -->
-  <img src="./about-life.svg?v=1" alt="What I Build // Hobbies Carousel" width="100%" />
+  <img src="./about-life.svg?v=2" alt="What I Build // Hobbies Carousel" width="100%" />
 
   <br/><br/>
 
   <!-- 3. TECH STACK ORBIT -->
-  <img src="./stack.svg?v=1" alt="Tech Stack Orbital Ecosystem" width="100%" />
+  <img src="./stack.svg?v=2" alt="Tech Stack Orbital Ecosystem" width="100%" />
 
   <br/><br/>
 
   <!-- 4. HOLOGRAPHIC ID BADGE & ENGINEERING DASHBOARD -->
-  <img src="./id-dashboard.svg?v=1" alt="ID Badge & Performance Dashboard" width="100%" />
+  <img src="./id-dashboard.svg?v=2" alt="ID Badge & Performance Dashboard" width="100%" />
 
   <br/><br/>
 
@@ -39,14 +39,14 @@
 
 <div align="center">
 
-  <!-- 5. 3D NIGHT CONTRIBUTION SKYLINE -->
+  <!-- 5. 3D CONTRIBUTION SKYLINE -->
   <img src="./profile-3d-contrib/profile-night-rainbow.svg" alt="Vijay's 3D Night Skyline Contribution City" width="100%" />
 
   <br/><br/>
 
   <!-- 6. CONNECT & TRANSMISSION FOOTER -->
   <a href="https://www.linkedin.com/in/vijay-kumar-k-y-83882389/" target="_blank">
-    <img src="./connect.svg?v=1" alt="Connect with Vijay Kumar" width="100%" />
+    <img src="./connect.svg?v=2" alt="Connect with Vijay Kumar" width="100%" />
   </a>
 
   <br/>
@@ -62,10 +62,10 @@
     </a>
     &nbsp;&nbsp;
     <a href="https://github.com/Vijay-Ky">
-      <img src="https://img.shields.io/badge/GitHub-@Vijay--Ky-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+      <img src="https://img.shields.io/badge/GitHub-@Vijay--Ky-0F172A?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
     </a>
   </p>
 
-  <sub>Crafted with midnight-glass design, pure SVG + CSS/SMIL animations • Zero client-side JavaScript • Refreshed dynamically</sub>
+  <sub>Crafted with Neo-Frosted White Glass • Pure SVG + CSS/SMIL GSAP-spring physics • Zero JavaScript required</sub>
 
 </div>

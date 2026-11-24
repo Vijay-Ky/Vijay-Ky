@@ -1,59 +1,52 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 380" width="100%" height="100%">
   <defs>
-    <!-- Backgrounds & Gradients -->
-    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0b0d17"/>
-      <stop offset="50%" stop-color="#0e1122"/>
-      <stop offset="100%" stop-color="#141126"/>
+    <!-- White Card Background -->
+    <linearGradient id="whiteCardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#f1f5f9"/>
     </linearGradient>
 
-    <linearGradient id="auroraBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.5"/>
-      <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#f472b6" stop-opacity="0.5"/>
+    <!-- Border Gradient -->
+    <linearGradient id="whiteBorderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#7c3aed" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#db2777" stop-opacity="0.5"/>
     </linearGradient>
 
-    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#38bdf8"/>
-      <stop offset="100%" stop-color="#0284c7"/>
+    <linearGradient id="blueTileGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
     </linearGradient>
 
-    <linearGradient id="violetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#c084fc"/>
-      <stop offset="100%" stop-color="#7c3aed"/>
+    <linearGradient id="purpleTileGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5f3ff"/>
+      <stop offset="100%" stop-color="#ede9fe"/>
     </linearGradient>
 
-    <linearGradient id="pinkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f472b6"/>
-      <stop offset="100%" stop-color="#db2777"/>
+    <linearGradient id="pinkTileGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdf2f8"/>
+      <stop offset="100%" stop-color="#fce7f3"/>
     </linearGradient>
 
-    <!-- Pattern -->
-    <pattern id="dotGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="1" fill="#94a3b8" fill-opacity="0.08"/>
-    </pattern>
-
-    <!-- Filters -->
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+    <!-- Soft Drop Shadow -->
+    <filter id="softCardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#0f172a" flood-opacity="0.06"/>
     </filter>
+
+    <pattern id="lightDotGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#64748b" fill-opacity="0.1"/>
+    </pattern>
   </defs>
 
   <style>
     .mono { font-family: 'SF Mono', Consolas, Monaco, 'Courier New', monospace; }
     .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
 
-    @keyframes cursorBlink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0; }
-    }
+    @keyframes cursorBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
     .cursor { animation: cursorBlink 1s infinite; }
 
-    /* Carousel Story Bars: 12s loop */
+    /* GSAP Story Progress Bars (12s cycle) */
     @keyframes bar1 {
       0% { width: 0; }
       30% { width: 125px; }
@@ -75,56 +68,62 @@
     .story-bar2 { animation: bar2 12s linear infinite; }
     .story-bar3 { animation: bar3 12s linear infinite; }
 
-    /* Carousel Slides: 12s loop (each 4s active) */
+    /* GSAP Spring Carousel Slides */
     @keyframes slide1 {
       0%, 28% { opacity: 1; transform: translateX(0); }
-      32%, 96% { opacity: 0; transform: translateX(12px); }
+      32%, 96% { opacity: 0; transform: translateX(14px); }
       100% { opacity: 1; transform: translateX(0); }
     }
     @keyframes slide2 {
-      0%, 29% { opacity: 0; transform: translateX(-12px); }
+      0%, 29% { opacity: 0; transform: translateX(-14px); }
       33%, 61% { opacity: 1; transform: translateX(0); }
-      65%, 100% { opacity: 0; transform: translateX(12px); }
+      65%, 100% { opacity: 0; transform: translateX(14px); }
     }
     @keyframes slide3 {
-      0%, 62% { opacity: 0; transform: translateX(-12px); }
+      0%, 62% { opacity: 0; transform: translateX(-14px); }
       66%, 95% { opacity: 1; transform: translateX(0); }
-      99%, 100% { opacity: 0; transform: translateX(12px); }
+      99%, 100% { opacity: 0; transform: translateX(14px); }
     }
-    .slide-act1 { animation: slide1 12s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
-    .slide-act2 { animation: slide2 12s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
-    .slide-act3 { animation: slide3 12s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+    .slide-1 { animation: slide1 12s cubic-bezier(0.34, 1.56, 0.64, 1) infinite; }
+    .slide-2 { animation: slide2 12s cubic-bezier(0.34, 1.56, 0.64, 1) infinite; }
+    .slide-3 { animation: slide3 12s cubic-bezier(0.34, 1.56, 0.64, 1) infinite; }
 
     /* Ring Gauge Rotation */
     @keyframes ringPulse {
-      0%, 100% { stroke-dashoffset: 60; }
-      50% { stroke-dashoffset: 45; }
+      0%, 100% { stroke-dashoffset: 45; }
+      50% { stroke-dashoffset: 35; }
     }
-    .ring-cyan { animation: ringPulse 6s ease-in-out infinite; }
-    .ring-violet { animation: ringPulse 7s ease-in-out infinite; }
-    .ring-pink { animation: ringPulse 8s ease-in-out infinite; }
+    .ring-blue { animation: ringPulse 5s ease-in-out infinite; }
+    .ring-purple { animation: ringPulse 6s ease-in-out infinite; }
+    .ring-rose { animation: ringPulse 7s ease-in-out infinite; }
+
+    /* Row Hover Float Effect */
+    @keyframes rowHover {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-2px); }
+    }
+    .row-hover1 { animation: rowHover 4s ease-in-out infinite; }
+    .row-hover2 { animation: rowHover 4s 1s ease-in-out infinite; }
+    .row-hover3 { animation: rowHover 4s 2s ease-in-out infinite; }
   </style>
 
-  <!-- ================= LEFT CARD: CAPABILITIES TERMINAL ================= -->
+  <!-- ================= LEFT CARD: ARCHITECTURE BROWSER ================= -->
   <g transform="translate(0, 0)">
-    <!-- Card Base -->
-    <rect width="445" height="380" rx="18" fill="url(#cardBg)"/>
-    <rect width="445" height="380" rx="18" fill="url(#dotGrid)"/>
-    <rect width="443" height="378" x="1" y="1" rx="17" fill="none" stroke="url(#auroraBorder)" stroke-width="1.2"/>
+    <rect width="445" height="380" rx="18" fill="url(#whiteCardBg)" filter="url(#softCardShadow)"/>
+    <rect width="445" height="380" rx="18" fill="url(#lightDotGrid)"/>
+    <rect width="443" height="378" x="1" y="1" rx="17" fill="none" stroke="url(#whiteBorderGrad)" stroke-width="1.4"/>
 
-    <!-- Browser Header -->
+    <!-- Window Top Header -->
     <g transform="translate(20, 20)">
-      <!-- Window Controls -->
       <circle cx="6" cy="12" r="5" fill="#ef4444"/>
-      <circle cx="22" cy="12" r="5" fill="#eab308"/>
+      <circle cx="22" cy="12" r="5" fill="#f59e0b"/>
       <circle cx="38" cy="12" r="5" fill="#10b981"/>
 
-      <!-- URL Bar -->
-      <rect x="60" y="0" width="325" height="24" rx="6" fill="#141829" stroke="#334155" stroke-width="0.8"/>
-      <!-- Lock Icon -->
-      <path d="M72 13h10v6H72v-6zm2-2a3 3 0 0 1 6 0v2h-6v-2z" fill="#94a3b8" transform="translate(4, -1) scale(0.85)"/>
-      <text x="86" y="16" fill="#94a3b8" class="mono" font-size="11">https://vijay.dev/architecture</text>
-      <text x="272" y="16" fill="#22d3ee" class="mono cursor" font-size="12">|</text>
+      <!-- URL Pill -->
+      <rect x="60" y="0" width="325" height="25" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="0.9"/>
+      <path d="M72 13h10v6H72v-6zm2-2a3 3 0 0 1 6 0v2h-6v-2z" fill="#64748b" transform="translate(4, -1) scale(0.85)"/>
+      <text x="86" y="16.5" fill="#475569" class="mono" font-size="11" font-weight="600">https://vijay.dev/architecture</text>
+      <text x="272" y="16.5" fill="#2563eb" class="mono cursor" font-size="12" font-weight="800">|</text>
     </g>
 
     <!-- Capability Rows -->
@@ -132,171 +131,169 @@
       <text x="0" y="12" fill="#64748b" class="mono" font-size="10" font-weight="700" letter-spacing="1.5">CORE ENGINEERING DOMAINS</text>
 
       <!-- Row 1: Enterprise Backend -->
-      <g transform="translate(0, 28)">
-        <rect width="401" height="64" rx="12" fill="#0f1325" stroke="#1e293b" stroke-width="1"/>
-        <rect x="12" y="12" width="40" height="40" rx="10" fill="url(#cyanGrad)" fill-opacity="0.15" stroke="#38bdf8" stroke-opacity="0.4"/>
-        <text x="32" y="38" font-size="20" text-anchor="middle">⚙️</text>
-        <text x="64" y="29" fill="#f8fafc" class="sans" font-size="14.5" font-weight="600">Enterprise Backend Systems</text>
-        <text x="64" y="47" fill="#94a3b8" class="mono" font-size="11.5">Java • Spring Boot • Python • Scalable REST</text>
+      <g transform="translate(0, 26)" class="row-hover1">
+        <rect width="401" height="66" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2" filter="url(#softCardShadow)"/>
+        <rect x="12" y="13" width="40" height="40" rx="10" fill="url(#blueTileGrad)" stroke="#bfdbfe" stroke-width="1"/>
+        <text x="32" y="39" font-size="20" text-anchor="middle">⚙️</text>
+        <text x="64" y="30" fill="#0f172a" class="sans" font-size="14.5" font-weight="700">Enterprise Backend Systems</text>
+        <text x="64" y="48" fill="#475569" class="mono" font-size="11.5">Java • Spring Boot • Python • Scalable REST</text>
       </g>
 
       <!-- Row 2: Modern Reactive Frontends -->
-      <g transform="translate(0, 104)">
-        <rect width="401" height="64" rx="12" fill="#0f1325" stroke="#1e293b" stroke-width="1"/>
-        <rect x="12" y="12" width="40" height="40" rx="10" fill="url(#violetGrad)" fill-opacity="0.15" stroke="#c084fc" stroke-opacity="0.4"/>
-        <text x="32" y="38" font-size="20" text-anchor="middle">⚛️</text>
-        <text x="64" y="29" fill="#f8fafc" class="sans" font-size="14.5" font-weight="600">Modern Reactive Frontends</text>
-        <text x="64" y="47" fill="#94a3b8" class="mono" font-size="11.5">TypeScript • React • Next.js • Fluid UX</text>
+      <g transform="translate(0, 104)" class="row-hover2">
+        <rect width="401" height="66" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2" filter="url(#softCardShadow)"/>
+        <rect x="12" y="13" width="40" height="40" rx="10" fill="url(#purpleTileGrad)" stroke="#ddd6fe" stroke-width="1"/>
+        <text x="32" y="39" font-size="20" text-anchor="middle">⚛️</text>
+        <text x="64" y="30" fill="#0f172a" class="sans" font-size="14.5" font-weight="700">Modern Reactive Frontends</text>
+        <text x="64" y="48" fill="#475569" class="mono" font-size="11.5">TypeScript • React • Next.js • Fluid UX</text>
       </g>
 
       <!-- Row 3: Cloud & Containerization -->
-      <g transform="translate(0, 180)">
-        <rect width="401" height="64" rx="12" fill="#0f1325" stroke="#1e293b" stroke-width="1"/>
-        <rect x="12" y="12" width="40" height="40" rx="10" fill="url(#pinkGrad)" fill-opacity="0.15" stroke="#f472b6" stroke-opacity="0.4"/>
-        <text x="32" y="38" font-size="20" text-anchor="middle">🐳</text>
-        <text x="64" y="29" fill="#f8fafc" class="sans" font-size="14.5" font-weight="600">Cloud, Containers &amp; DevOps</text>
-        <text x="64" y="47" fill="#94a3b8" class="mono" font-size="11.5">Docker • Kubernetes • CI/CD • Cloud Native</text>
+      <g transform="translate(0, 182)" class="row-hover3">
+        <rect width="401" height="66" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.2" filter="url(#softCardShadow)"/>
+        <rect x="12" y="13" width="40" height="40" rx="10" fill="url(#pinkTileGrad)" stroke="#fbcfe8" stroke-width="1"/>
+        <text x="32" y="39" font-size="20" text-anchor="middle">🐳</text>
+        <text x="64" y="30" fill="#0f172a" class="sans" font-size="14.5" font-weight="700">Cloud, Containers &amp; DevOps</text>
+        <text x="64" y="48" fill="#475569" class="mono" font-size="11.5">Docker • Kubernetes • CI/CD • Cloud Native</text>
       </g>
 
       <!-- Bottom Status Pill -->
-      <g transform="translate(0, 260)">
-        <rect width="401" height="30" rx="8" fill="#13172c"/>
-        <circle cx="16" cy="15" r="4" fill="#10b981" filter="url(#glow)"/>
-        <text x="28" y="19" fill="#34d399" class="mono" font-size="11" font-weight="600">HIGH AVAILABILITY &amp; RESILIENT ARCHITECTURES</text>
+      <g transform="translate(0, 262)">
+        <rect width="401" height="32" rx="8" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1"/>
+        <circle cx="16" cy="16" r="4.5" fill="#059669"/>
+        <text x="30" y="20.5" fill="#065f46" class="mono" font-size="11" font-weight="700">HIGH AVAILABILITY &amp; RESILIENT ARCHITECTURES</text>
       </g>
     </g>
   </g>
 
   <!-- ================= RIGHT CARD: HOBBIES & LIFE CAROUSEL ================= -->
   <g transform="translate(475, 0)">
-    <!-- Card Base -->
-    <rect width="445" height="380" rx="18" fill="url(#cardBg)"/>
-    <rect width="445" height="380" rx="18" fill="url(#dotGrid)"/>
-    <rect width="443" height="378" x="1" y="1" rx="17" fill="none" stroke="url(#auroraBorder)" stroke-width="1.2"/>
+    <rect width="445" height="380" rx="18" fill="url(#whiteCardBg)" filter="url(#softCardShadow)"/>
+    <rect width="445" height="380" rx="18" fill="url(#lightDotGrid)"/>
+    <rect width="443" height="378" x="1" y="1" rx="17" fill="none" stroke="url(#whiteBorderGrad)" stroke-width="1.4"/>
 
-    <!-- Instagram-style 3 Segment Progress Bars -->
+    <!-- Story Segment Progress Bars -->
     <g transform="translate(20, 20)">
       <!-- Track 1 -->
-      <rect x="0" y="0" width="125" height="3.5" rx="1.75" fill="#1e293b"/>
-      <rect x="0" y="0" width="0" height="3.5" rx="1.75" fill="#22d3ee" class="story-bar1"/>
+      <rect x="0" y="0" width="125" height="4" rx="2" fill="#e2e8f0"/>
+      <rect x="0" y="0" width="0" height="4" rx="2" fill="#2563eb" class="story-bar1"/>
 
       <!-- Track 2 -->
-      <rect x="140" y="0" width="125" height="3.5" rx="1.75" fill="#1e293b"/>
-      <rect x="140" y="0" width="0" height="3.5" rx="1.75" fill="#a78bfa" class="story-bar2"/>
+      <rect x="140" y="0" width="125" height="4" rx="2" fill="#e2e8f0"/>
+      <rect x="140" y="0" width="0" height="4" rx="2" fill="#7c3aed" class="story-bar2"/>
 
       <!-- Track 3 -->
-      <rect x="280" y="0" width="125" height="3.5" rx="1.75" fill="#1e293b"/>
-      <rect x="280" y="0" width="0" height="3.5" rx="1.75" fill="#f472b6" class="story-bar3"/>
+      <rect x="280" y="0" width="125" height="4" rx="2" fill="#e2e8f0"/>
+      <rect x="280" y="0" width="0" height="4" rx="2" fill="#db2777" class="story-bar3"/>
     </g>
 
-    <!-- Carousel Container (Slides Rotate Every 4s in 12s total cycle) -->
+    <!-- Carousel Container -->
     <g transform="translate(24, 46)">
       <!-- SLIDE 1: ACTING & THEATRE -->
-      <g class="slide-act1">
-        <rect x="0" y="0" width="397" height="200" rx="14" fill="#101328" stroke="#22d3ee" stroke-opacity="0.25" stroke-width="1"/>
-        <text x="18" y="28" fill="#22d3ee" class="mono" font-size="10.5" font-weight="700" letter-spacing="1">PASSION 01 // DRAMATIC ARTS</text>
+      <g class="slide-1">
+        <rect x="0" y="0" width="397" height="200" rx="14" fill="#ffffff" stroke="#bfdbfe" stroke-width="1.2" filter="url(#softCardShadow)"/>
+        <text x="18" y="28" fill="#1d4ed8" class="mono" font-size="10.5" font-weight="800" letter-spacing="1">PASSION 01 // DRAMATIC ARTS</text>
         
         <text x="18" y="65" font-size="30">🎭</text>
-        <text x="62" y="64" fill="#f8fafc" class="sans" font-size="20" font-weight="700">Acting &amp; Stagecraft</text>
+        <text x="62" y="64" fill="#0f172a" class="sans" font-size="20" font-weight="800">Acting &amp; Stagecraft</text>
         
-        <text x="18" y="105" fill="#cbd5e1" class="sans" font-size="13.5" line-height="22">
-          <tspan x="18" dy="0">Exploring human truth, stage presence, expressive</tspan>
+        <text x="18" y="105" fill="#334155" class="sans" font-size="13.5" line-height="22">
+          <tspan x="18" dy="0">Exploring emotional depth, stage presence, expressive</tspan>
           <tspan x="18" dy="20">voice, and theatrical storytelling outside the terminal.</tspan>
         </text>
 
         <!-- Chips -->
         <g transform="translate(18, 155)">
-          <rect x="0" y="0" width="80" height="22" rx="6" fill="#1e293b"/>
-          <text x="40" y="15" fill="#38bdf8" class="mono" font-size="10" text-anchor="middle">#Acting</text>
+          <rect x="0" y="0" width="80" height="24" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+          <text x="40" y="16" fill="#1d4ed8" class="mono" font-size="10.5" font-weight="600" text-anchor="middle">#Acting</text>
 
-          <rect x="90" y="0" width="90" height="22" rx="6" fill="#1e293b"/>
-          <text x="135" y="15" fill="#38bdf8" class="mono" font-size="10" text-anchor="middle">#StageCraft</text>
+          <rect x="90" y="0" width="94" height="24" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+          <text x="137" y="16" fill="#1d4ed8" class="mono" font-size="10.5" font-weight="600" text-anchor="middle">#StageCraft</text>
 
-          <rect x="190" y="0" width="95" height="22" rx="6" fill="#1e293b"/>
-          <text x="237" y="15" fill="#38bdf8" class="mono" font-size="10" text-anchor="middle">#Expression</text>
+          <rect x="194" y="0" width="96" height="24" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+          <text x="242" y="16" fill="#1d4ed8" class="mono" font-size="10.5" font-weight="600" text-anchor="middle">#Expression</text>
         </g>
       </g>
 
       <!-- SLIDE 2: BOOKS & LEARNING -->
-      <g class="slide-act2">
-        <rect x="0" y="0" width="397" height="200" rx="14" fill="#101328" stroke="#a78bfa" stroke-opacity="0.25" stroke-width="1"/>
-        <text x="18" y="28" fill="#a78bfa" class="mono" font-size="10.5" font-weight="700" letter-spacing="1">PASSION 02 // LIFELONG READING</text>
+      <g class="slide-2">
+        <rect x="0" y="0" width="397" height="200" rx="14" fill="#ffffff" stroke="#ddd6fe" stroke-width="1.2" filter="url(#softCardShadow)"/>
+        <text x="18" y="28" fill="#6d28d9" class="mono" font-size="10.5" font-weight="800" letter-spacing="1">PASSION 02 // LIFELONG READING</text>
         
         <text x="18" y="65" font-size="30">📚</text>
-        <text x="62" y="64" fill="#f8fafc" class="sans" font-size="20" font-weight="700">Books &amp; System Thinking</text>
+        <text x="62" y="64" fill="#0f172a" class="sans" font-size="20" font-weight="800">Books &amp; System Thinking</text>
         
-        <text x="18" y="105" fill="#cbd5e1" class="sans" font-size="13.5" line-height="22">
+        <text x="18" y="105" fill="#334155" class="sans" font-size="13.5" line-height="22">
           <tspan x="18" dy="0">Avid reader exploring entrepreneurial strategy,</tspan>
           <tspan x="18" dy="20">behavioral psychology, leadership &amp; philosophy.</tspan>
         </text>
 
         <!-- Chips -->
         <g transform="translate(18, 155)">
-          <rect x="0" y="0" width="80" height="22" rx="6" fill="#1e293b"/>
-          <text x="40" y="15" fill="#c084fc" class="mono" font-size="10" text-anchor="middle">#DeepWork</text>
+          <rect x="0" y="0" width="86" height="24" rx="6" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1"/>
+          <text x="43" y="16" fill="#6d28d9" class="mono" font-size="10.5" font-weight="600" text-anchor="middle">#DeepWork</text>
 
-          <rect x="90" y="0" width="90" height="22" rx="6" fill="#1e293b"/>
-          <text x="135" y="15" fill="#c084fc" class="mono" font-size="10" text-anchor="middle">#Strategy</text>
+          <rect x="96" y="0" width="88" height="24" rx="6" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1"/>
+          <text x="140" y="16" fill="#6d28d9" class="mono" font-size="10.5" font-weight="600" text-anchor="middle">#Strategy</text>
 
-          <rect x="190" y="0" width="95" height="22" rx="6" fill="#1e293b"/>
-          <text x="237" y="15" fill="#c084fc" class="mono" font-size="10" text-anchor="middle">#Knowledge</text>
+          <rect x="194" y="0" width="98" height="24" rx="6" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="1"/>
+          <text x="243" y="16" fill="#6d28d9" class="mono" font-size="10.5" font-weight="600" text-anchor="middle">#Leadership</text>
         </g>
       </g>
 
       <!-- SLIDE 3: DOGS -->
-      <g class="slide-act3">
-        <rect x="0" y="0" width="397" height="200" rx="14" fill="#101328" stroke="#f472b6" stroke-opacity="0.25" stroke-width="1"/>
-        <text x="18" y="28" fill="#f472b6" class="mono" font-size="10.5" font-weight="700" letter-spacing="1">PASSION 03 // LIFE COMPANIONS</text>
+      <g class="slide-3">
+        <rect x="0" y="0" width="397" height="200" rx="14" fill="#ffffff" stroke="#fbcfe8" stroke-width="1.2" filter="url(#softCardShadow)"/>
+        <text x="18" y="28" fill="#be185d" class="mono" font-size="10.5" font-weight="800" letter-spacing="1">PASSION 03 // LIFE COMPANIONS</text>
         
         <text x="18" y="65" font-size="30">🐕</text>
-        <text x="62" y="64" fill="#f8fafc" class="sans" font-size="20" font-weight="700">Dogs &amp; Canine Companions</text>
+        <text x="62" y="64" fill="#0f172a" class="sans" font-size="20" font-weight="800">Dogs &amp; Companions</text>
         
-        <text x="18" y="105" fill="#cbd5e1" class="sans" font-size="13.5" line-height="22">
-          <tspan x="18" dy="0">Unconditional loyalty, vibrant outdoor energy,</tspan>
-          <tspan x="18" dy="20">and the greatest stress busters in the universe.</tspan>
+        <text x="18" y="105" fill="#334155" class="sans" font-size="13.5" line-height="22">
+          <tspan x="18" dy="0">Unconditional loyalty, high outdoor energy,</tspan>
+          <tspan x="18" dy="20">and the greatest stress busters in existence.</tspan>
         </text>
 
         <!-- Chips -->
         <g transform="translate(18, 155)">
-          <rect x="0" y="0" width="95" height="22" rx="6" fill="#1e293b"/>
-          <text x="47" y="15" fill="#f472b6" class="mono" font-size="10" text-anchor="middle">#DogsOfGitHub</text>
+          <rect x="0" y="0" width="102" height="24" rx="6" fill="#fdf2f8" stroke="#fbcfe8" stroke-width="1"/>
+          <text x="51" y="16" fill="#be185d" class="mono" font-size="10.5" font-weight="600" text-anchor="middle">#DogsOfGitHub</text>
 
-          <rect x="105" y="0" width="85" height="22" rx="6" fill="#1e293b"/>
-          <text x="147" y="15" fill="#f472b6" class="mono" font-size="10" text-anchor="middle">#Companions</text>
+          <rect x="112" y="0" width="90" height="24" rx="6" fill="#fdf2f8" stroke="#fbcfe8" stroke-width="1"/>
+          <text x="157" y="16" fill="#be185d" class="mono" font-size="10.5" font-weight="600" text-anchor="middle">#Loyalty</text>
 
-          <rect x="200" y="0" width="85" height="22" rx="6" fill="#1e293b"/>
-          <text x="242" y="15" fill="#f472b6" class="mono" font-size="10" text-anchor="middle">#Energy</text>
+          <rect x="212" y="0" width="86" height="24" rx="6" fill="#fdf2f8" stroke="#fbcfe8" stroke-width="1"/>
+          <text x="255" y="16" fill="#be185d" class="mono" font-size="10.5" font-weight="600" text-anchor="middle">#Energy</text>
         </g>
       </g>
     </g>
 
-    <!-- Bottom Daily Energy Rings (Apple fitness style) -->
+    <!-- Bottom Daily Energy Rings (Apple Fitness / Activity style in White) -->
     <g transform="translate(24, 260)">
-      <rect width="397" height="96" rx="12" fill="#0f1325" stroke="#1e293b" stroke-width="1"/>
+      <rect width="397" height="96" rx="12" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
 
-      <!-- Three concentric / side-by-side activity rings -->
       <!-- Ring 1: Code -->
       <g transform="translate(48, 48)">
-        <circle cx="0" cy="0" r="28" fill="none" stroke="#1e293b" stroke-width="6"/>
-        <circle cx="0" cy="0" r="28" fill="none" stroke="#22d3ee" stroke-width="6" stroke-linecap="round" stroke-dasharray="176" stroke-dashoffset="30" class="ring-cyan" transform="rotate(-90)"/>
-        <text x="0" y="4" fill="#22d3ee" class="mono" font-size="11" font-weight="700" text-anchor="middle">92%</text>
-        <text x="0" y="40" fill="#94a3b8" class="sans" font-size="10.5" font-weight="600" text-anchor="middle">BUILD</text>
+        <circle cx="0" cy="0" r="28" fill="none" stroke="#e2e8f0" stroke-width="6"/>
+        <circle cx="0" cy="0" r="28" fill="none" stroke="#2563eb" stroke-width="6" stroke-linecap="round" stroke-dasharray="176" stroke-dashoffset="30" class="ring-blue" transform="rotate(-90)"/>
+        <text x="0" y="4.5" fill="#1d4ed8" class="mono" font-size="11.5" font-weight="800" text-anchor="middle">94%</text>
+        <text x="0" y="40" fill="#475569" class="sans" font-size="10.5" font-weight="700" text-anchor="middle">BUILD</text>
       </g>
 
       <!-- Ring 2: Books -->
       <g transform="translate(198, 48)">
-        <circle cx="0" cy="0" r="28" fill="none" stroke="#1e293b" stroke-width="6"/>
-        <circle cx="0" cy="0" r="28" fill="none" stroke="#a78bfa" stroke-width="6" stroke-linecap="round" stroke-dasharray="176" stroke-dashoffset="48" class="ring-violet" transform="rotate(-90)"/>
-        <text x="0" y="4" fill="#a78bfa" class="mono" font-size="11" font-weight="700" text-anchor="middle">85%</text>
-        <text x="0" y="40" fill="#94a3b8" class="sans" font-size="10.5" font-weight="600" text-anchor="middle">READ</text>
+        <circle cx="0" cy="0" r="28" fill="none" stroke="#e2e8f0" stroke-width="6"/>
+        <circle cx="0" cy="0" r="28" fill="none" stroke="#7c3aed" stroke-width="6" stroke-linecap="round" stroke-dasharray="176" stroke-dashoffset="48" class="ring-purple" transform="rotate(-90)"/>
+        <text x="0" y="4.5" fill="#6d28d9" class="mono" font-size="11.5" font-weight="800" text-anchor="middle">86%</text>
+        <text x="0" y="40" fill="#475569" class="sans" font-size="10.5" font-weight="700" text-anchor="middle">READ</text>
       </g>
 
       <!-- Ring 3: Creative -->
       <g transform="translate(348, 48)">
-        <circle cx="0" cy="0" r="28" fill="none" stroke="#1e293b" stroke-width="6"/>
-        <circle cx="0" cy="0" r="28" fill="none" stroke="#f472b6" stroke-width="6" stroke-linecap="round" stroke-dasharray="176" stroke-dashoffset="56" class="ring-pink" transform="rotate(-90)"/>
-        <text x="0" y="4" fill="#f472b6" class="mono" font-size="11" font-weight="700" text-anchor="middle">78%</text>
-        <text x="0" y="40" fill="#94a3b8" class="sans" font-size="10.5" font-weight="600" text-anchor="middle">CREATE</text>
+        <circle cx="0" cy="0" r="28" fill="none" stroke="#e2e8f0" stroke-width="6"/>
+        <circle cx="0" cy="0" r="28" fill="none" stroke="#db2777" stroke-width="6" stroke-linecap="round" stroke-dasharray="176" stroke-dashoffset="56" class="ring-rose" transform="rotate(-90)"/>
+        <text x="0" y="4.5" fill="#be185d" class="mono" font-size="11.5" font-weight="800" text-anchor="middle">80%</text>
+        <text x="0" y="40" fill="#475569" class="sans" font-size="10.5" font-weight="700" text-anchor="middle">STAGE</text>
       </g>
     </g>
   </g>
